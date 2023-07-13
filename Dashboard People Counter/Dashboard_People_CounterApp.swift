@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct Dashboard_People_CounterApp: App {
+    @StateObject var delegate: FirebaseConnection = FirebaseConnection()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+            .environmentObject(delegate)
         }
     }
 }

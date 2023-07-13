@@ -11,6 +11,10 @@
 		8329053A2A5FF0B300D3413C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832905392A5FF0B300D3413C /* ContentView.swift */; };
 		8329053C2A5FF0B500D3413C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8329053B2A5FF0B500D3413C /* Assets.xcassets */; };
 		8329053F2A5FF0B500D3413C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8329053E2A5FF0B500D3413C /* Preview Assets.xcassets */; };
+		832905472A5FF14000D3413C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 832905462A5FF14000D3413C /* GoogleService-Info.plist */; };
+		8329054A2A5FF19C00D3413C /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 832905492A5FF19C00D3413C /* FirebaseDatabase */; };
+		8329054C2A5FF19C00D3413C /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8329054B2A5FF19C00D3413C /* FirebaseDatabaseSwift */; };
+		8329054E2A5FF1B900D3413C /* FirebaseConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8329054D2A5FF1B900D3413C /* FirebaseConnection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,8 @@
 		8329053B2A5FF0B500D3413C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8329053E2A5FF0B500D3413C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		832905402A5FF0B500D3413C /* Dashboard_People_Counter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dashboard_People_Counter.entitlements; sourceTree = "<group>"; };
+		832905462A5FF14000D3413C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8329054D2A5FF1B900D3413C /* FirebaseConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConnection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +33,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8329054C2A5FF19C00D3413C /* FirebaseDatabaseSwift in Frameworks */,
+				8329054A2A5FF19C00D3413C /* FirebaseDatabase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +64,9 @@
 				832905392A5FF0B300D3413C /* ContentView.swift */,
 				8329053B2A5FF0B500D3413C /* Assets.xcassets */,
 				832905402A5FF0B500D3413C /* Dashboard_People_Counter.entitlements */,
+				832905462A5FF14000D3413C /* GoogleService-Info.plist */,
 				8329053D2A5FF0B500D3413C /* Preview Content */,
+				8329054D2A5FF1B900D3413C /* FirebaseConnection.swift */,
 			);
 			path = "Dashboard People Counter";
 			sourceTree = "<group>";
@@ -85,6 +95,10 @@
 			dependencies = (
 			);
 			name = "Dashboard People Counter";
+			packageProductDependencies = (
+				832905492A5FF19C00D3413C /* FirebaseDatabase */,
+				8329054B2A5FF19C00D3413C /* FirebaseDatabaseSwift */,
+			);
 			productName = "Dashboard People Counter";
 			productReference = 832905342A5FF0B300D3413C /* Dashboard People Counter.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +127,9 @@
 				Base,
 			);
 			mainGroup = 8329052B2A5FF0B300D3413C;
+			packageReferences = (
+				832905482A5FF19C00D3413C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 832905352A5FF0B300D3413C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -128,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8329053F2A5FF0B500D3413C /* Preview Assets.xcassets in Resources */,
+				832905472A5FF14000D3413C /* GoogleService-Info.plist in Resources */,
 				8329053C2A5FF0B500D3413C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8329054E2A5FF1B900D3413C /* FirebaseConnection.swift in Sources */,
 				8329053A2A5FF0B300D3413C /* ContentView.swift in Sources */,
 				832905382A5FF0B300D3413C /* Dashboard_People_CounterApp.swift in Sources */,
 			);
@@ -274,6 +293,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -301,6 +321,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -336,6 +357,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		832905482A5FF19C00D3413C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		832905492A5FF19C00D3413C /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 832905482A5FF19C00D3413C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		8329054B2A5FF19C00D3413C /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 832905482A5FF19C00D3413C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8329052C2A5FF0B300D3413C /* Project object */;
 }

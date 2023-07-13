@@ -6,21 +6,33 @@
 //
 
 import SwiftUI
+import FirebaseCore
+import FirebaseDatabase
 
 struct ContentView: View {
+    @State var peopleCount : [Int] = []
+    @EnvironmentObject var delegate: FirebaseConnection
+    
+    func updateData(snapshot: DataSnapshot?) {
+//        self.peopleCount = snapshot?.value as Int
+        guard let value = snapshot?.value as? [String: Any] else {return}
+        let count = value.first!.1 as! Int
+        peopleCount.append(count)
+    }
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text("Realtime People Count")
+//            Text(peopleCount != nil ? String(peopleCount!) : "Loading...")
+            HStack{
+                ForEach(self.peopleCount, id: \.self) { data in
+                    Text(String(data))
+                }
+            }
         }
         .padding()
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+        .onAppear{
+            delegate.getCounterData(completion: updateData)
+        }
     }
 }

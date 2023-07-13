@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>469116921717-lo3605rkegbdgiqfou6ghr7b35e5pgja.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.469116921717-lo3605rkegbdgiqfou6ghr7b35e5pgja</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA7F-pdcNssanrxQ1HPAF5Hxp3XC_z08yw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>469116921717</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.exacode.Dashboard-People-Counter</string>
+	<key>PROJECT_ID</key>
+	<string>person-coun</string>
+	<key>STORAGE_BUCKET</key>
+	<string>person-coun.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:469116921717:ios:366067636f27c203b4d53c</string>
+	<key>DATABASE_URL</key>
+	<string>https://person-coun-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>
