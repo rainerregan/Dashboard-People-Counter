@@ -15,6 +15,7 @@
 		8329054A2A5FF19C00D3413C /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 832905492A5FF19C00D3413C /* FirebaseDatabase */; };
 		8329054C2A5FF19C00D3413C /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8329054B2A5FF19C00D3413C /* FirebaseDatabaseSwift */; };
 		8329054E2A5FF1B900D3413C /* FirebaseConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8329054D2A5FF1B900D3413C /* FirebaseConnection.swift */; };
+		832905512A60005B00D3413C /* CountDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832905502A60005B00D3413C /* CountDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		832905402A5FF0B500D3413C /* Dashboard_People_Counter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dashboard_People_Counter.entitlements; sourceTree = "<group>"; };
 		832905462A5FF14000D3413C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8329054D2A5FF1B900D3413C /* FirebaseConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConnection.swift; sourceTree = "<group>"; };
+		832905502A60005B00D3413C /* CountDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				832905462A5FF14000D3413C /* GoogleService-Info.plist */,
 				8329053D2A5FF0B500D3413C /* Preview Content */,
 				8329054D2A5FF1B900D3413C /* FirebaseConnection.swift */,
+				832905502A60005B00D3413C /* CountDataModel.swift */,
 			);
 			path = "Dashboard People Counter";
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 				8329054E2A5FF1B900D3413C /* FirebaseConnection.swift in Sources */,
 				8329053A2A5FF0B300D3413C /* ContentView.swift in Sources */,
 				832905382A5FF0B300D3413C /* Dashboard_People_CounterApp.swift in Sources */,
+				832905512A60005B00D3413C /* CountDataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

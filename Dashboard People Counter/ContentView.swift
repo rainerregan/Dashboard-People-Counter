@@ -8,27 +8,44 @@
 import SwiftUI
 import FirebaseCore
 import FirebaseDatabase
+import Charts
 
 struct ContentView: View {
-    @State var peopleCount : [Int] = []
+    @State var countData : [CountDataModel] = []
     @EnvironmentObject var delegate: FirebaseConnection
     
     func updateData(snapshot: DataSnapshot?) {
-//        self.peopleCount = snapshot?.value as Int
         guard let value = snapshot?.value as? [String: Any] else {return}
-        let count = value.first!.1 as! Int
-        peopleCount.append(count)
+        
+        let count = value["person_count"] as! Int
+        let lastUpdated = value["last_updated"] as! Double
+        
+        let data = CountDataModel(count: count, lastUpdated: Date(timeIntervalSince1970: lastUpdated))
+        countData.append(data)
     }
     
     var body: some View {
         VStack {
             Text("Realtime People Count")
-//            Text(peopleCount != nil ? String(peopleCount!) : "Loading...")
+                .font(.title)
+            
             HStack{
-                ForEach(self.peopleCount, id: \.self) { data in
-                    Text(String(data))
+                VStack{
+                    Text("Current Capacity: \(String(countData.last?.count ?? 0))")
+                        .font(.title2)
                 }
             }
+            .padding(.vertical, 16)
+            
+            Chart {
+                ForEach(countData) { data in
+                    LineMark(
+                        x: .value("Timestamp", data.lastUpdated),
+                        y: .value("Total People Detected", data.count)
+                    )
+                }
+            }
+            .frame(height: 300)
         }
         .padding()
         .onAppear{
