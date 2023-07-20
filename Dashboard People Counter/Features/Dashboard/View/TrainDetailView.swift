@@ -8,25 +8,12 @@
 import SwiftUI
 
 struct TrainDetailView: View {
+
     var body: some View {
         VStack {
             Image("MRT-Banner")
                 .resizable()
-                .scaledToFill()
-                .frame(maxWidth: .infinity, maxHeight: 108, alignment: .center)
-                       
-            //MARK: Train Name
-            VStack(alignment: .leading) {
-                Text("Going to Lebak Bulus")
-                    .font(.SFProDisplay(.custom24))
-                
-                Text("Train Number 9")
-                    .font(.SFProDisplay(.custom42))
-            }
-//            .foregroundColor(.App.mainBlue)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.leading, 150)
-            
+                .scaledToFit()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
     }
@@ -37,3 +24,36 @@ struct TrainDetailView_Previews: PreviewProvider {
         TrainDetailView()
     }
 }
+
+
+/*
+ AngularGradient(gradient: Gradient(colors: [Color("Angular-Tosca"),
+                                             Color("Angular-Green"),
+                                             Color("Angular-Orange"),
+                                             Color("Angular-Orange")]), center: .zero, angle: .degrees(270+45))
+ 
+ 
+ 
+ 
+          ZStack {
+              Image("ColorfullBG")
+                  .resizable()
+                  .scaledToFill()
+                  .frame(maxWidth: screen.width, maxHeight: 700, alignment: .top)
+                  .padding(.bottom, 90)
+
+              //MARK: Train Name
+              VStack(alignment: .leading) {
+                  Text("Going to Lebak Bulus")
+                      .font(.SFProDisplay(.custom24))
+
+                  Text("Train Number 9")
+                      .font(.SFProDisplay(.custom42))
+              }
+              //            .foregroundColor(.App.mainBlue)
+              .frame(maxWidth: .infinity, alignment: .leading)
+              .padding(.leading, 150)
+          }
+
+ 
+ */

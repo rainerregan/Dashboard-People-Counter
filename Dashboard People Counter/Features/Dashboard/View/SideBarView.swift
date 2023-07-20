@@ -11,16 +11,18 @@ struct SideBarView: View {
     
     var body: some View {
         List {
-            NavigationLink(destination: TrainDetailView()) {
-               Text("Train number 1")
-            }
-            
-            NavigationLink(destination: TrainDetailView()) {
-                Text("Train number 2")
+            Section(header: Text("All Train")) {
+                NavigationLink(destination: TrainDetailView()) {
+                    Text("Train number 1")
+                    
+                }
+                NavigationLink(destination: TrainDetailView()) {
+                    Text("Train number 2")
+                }
+                
             }
         }
         .listStyle(.sidebar)
-        
     }
 }
 

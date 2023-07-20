@@ -13,6 +13,7 @@
 		809244A02A6922A4004AEEE5 /* MockTrainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8092449B2A6922A4004AEEE5 /* MockTrainModel.swift */; };
 		809244A12A6922A4004AEEE5 /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8092449D2A6922A4004AEEE5 /* SideBarView.swift */; };
 		809244A22A6922A4004AEEE5 /* TrainDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8092449E2A6922A4004AEEE5 /* TrainDetailView.swift */; };
+		809244AC2A6929C0004AEEE5 /* HelperFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809244AB2A6929C0004AEEE5 /* HelperFunction.swift */; };
 		832905382A5FF0B300D3413C /* Dashboard_People_CounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832905372A5FF0B300D3413C /* Dashboard_People_CounterApp.swift */; };
 		8329053A2A5FF0B300D3413C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832905392A5FF0B300D3413C /* ContentView.swift */; };
 		8329053C2A5FF0B500D3413C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8329053B2A5FF0B500D3413C /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 		8092449B2A6922A4004AEEE5 /* MockTrainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockTrainModel.swift; sourceTree = "<group>"; };
 		8092449D2A6922A4004AEEE5 /* SideBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
 		8092449E2A6922A4004AEEE5 /* TrainDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainDetailView.swift; sourceTree = "<group>"; };
+		809244AB2A6929C0004AEEE5 /* HelperFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunction.swift; sourceTree = "<group>"; };
 		832905342A5FF0B300D3413C /* Dashboard People Counter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dashboard People Counter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		832905372A5FF0B300D3413C /* Dashboard_People_CounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard_People_CounterApp.swift; sourceTree = "<group>"; };
 		832905392A5FF0B300D3413C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				809244A92A6924C1004AEEE5 /* Dashboard */,
+				809244AA2A6929AC004AEEE5 /* Helpers */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -148,6 +151,14 @@
 				8092449C2A6922A4004AEEE5 /* View */,
 			);
 			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		809244AA2A6929AC004AEEE5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				809244AB2A6929C0004AEEE5 /* HelperFunction.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		8329052B2A5FF0B300D3413C = {
@@ -266,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				809244AC2A6929C0004AEEE5 /* HelperFunction.swift in Sources */,
 				809244A22A6922A4004AEEE5 /* TrainDetailView.swift in Sources */,
 				809244A02A6922A4004AEEE5 /* MockTrainModel.swift in Sources */,
 				8329054E2A5FF1B900D3413C /* FirebaseConnection.swift in Sources */,
@@ -405,7 +417,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Dashboard People Counter/Preview Content\"";
-				DEVELOPMENT_TEAM = 8B7DH7AN2U;
+				DEVELOPMENT_TEAM = 8W485969C3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -433,7 +445,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Dashboard People Counter/Preview Content\"";
-				DEVELOPMENT_TEAM = 8B7DH7AN2U;
+				DEVELOPMENT_TEAM = 8W485969C3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

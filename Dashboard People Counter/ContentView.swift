@@ -25,31 +25,51 @@ struct ContentView: View {
     }
     
     var body: some View {
-        VStack {
-            Text("Realtime People Count")
-                .font(.title)
+        NavigationView {
+            SideBarView()
             
-            HStack{
-                VStack{
-                    Text("Current Capacity: \(String(countData.last?.count ?? 0))")
-                        .font(.title2)
-                }
-            }
-            .padding(.vertical, 16)
-            
-            Chart {
-                ForEach(countData) { data in
-                    LineMark(
-                        x: .value("Timestamp", data.lastUpdated),
-                        y: .value("Total People Detected", data.count)
-                    )
-                }
-            }
-            .frame(height: 300)
+            TrainDetailView()
         }
-        .padding()
+        .navigationTitle("Dashboard")
+        .toolbar {
+            ToolbarItem(placement: .navigation) {
+                Button(action: HelperFunction.toggleSideBar) {
+                    Image(systemName: "sidebar.leading")
+                }
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .onAppear{
             delegate.getCounterData(completion: updateData)
         }
     }
 }
+
+/**
+ 
+         VStack {
+             Text("Realtime People Count")
+                 .font(.title)
+ 
+             HStack{
+                 VStack{
+                     Text("Current Capacity: \(String(countData.last?.count ?? 0))")
+                         .font(.title2)
+                 }
+             }
+             .padding(.vertical, 16)
+ 
+             Chart {
+                 ForEach(countData) { data in
+                     LineMark(
+                         x: .value("Timestamp", data.lastUpdated),
+                         y: .value("Total People Detected", data.count)
+                     )
+                 }
+             }
+             .frame(height: 300)
+         }
+         .padding()
+         
+ 
+ */
