@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		809244962A69228B004AEEE5 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809244942A69228B004AEEE5 /* Fonts.swift */; };
+		809244972A69228B004AEEE5 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809244952A69228B004AEEE5 /* Colors.swift */; };
+		8092449F2A6922A4004AEEE5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809244992A6922A4004AEEE5 /* HomeViewModel.swift */; };
+		809244A02A6922A4004AEEE5 /* MockTrainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8092449B2A6922A4004AEEE5 /* MockTrainModel.swift */; };
+		809244A12A6922A4004AEEE5 /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8092449D2A6922A4004AEEE5 /* SideBarView.swift */; };
+		809244A22A6922A4004AEEE5 /* TrainDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8092449E2A6922A4004AEEE5 /* TrainDetailView.swift */; };
 		832905382A5FF0B300D3413C /* Dashboard_People_CounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832905372A5FF0B300D3413C /* Dashboard_People_CounterApp.swift */; };
 		8329053A2A5FF0B300D3413C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832905392A5FF0B300D3413C /* ContentView.swift */; };
 		8329053C2A5FF0B500D3413C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8329053B2A5FF0B500D3413C /* Assets.xcassets */; };
@@ -19,6 +25,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		809244942A69228B004AEEE5 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		809244952A69228B004AEEE5 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		809244992A6922A4004AEEE5 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		8092449B2A6922A4004AEEE5 /* MockTrainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockTrainModel.swift; sourceTree = "<group>"; };
+		8092449D2A6922A4004AEEE5 /* SideBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
+		8092449E2A6922A4004AEEE5 /* TrainDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainDetailView.swift; sourceTree = "<group>"; };
 		832905342A5FF0B300D3413C /* Dashboard People Counter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dashboard People Counter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		832905372A5FF0B300D3413C /* Dashboard_People_CounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard_People_CounterApp.swift; sourceTree = "<group>"; };
 		832905392A5FF0B300D3413C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -43,6 +55,101 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		809244932A69228B004AEEE5 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				809244942A69228B004AEEE5 /* Fonts.swift */,
+				809244952A69228B004AEEE5 /* Colors.swift */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
+		809244982A6922A4004AEEE5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				809244992A6922A4004AEEE5 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8092449A2A6922A4004AEEE5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				832905502A60005B00D3413C /* CountDataModel.swift */,
+				8092449B2A6922A4004AEEE5 /* MockTrainModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8092449C2A6922A4004AEEE5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8092449D2A6922A4004AEEE5 /* SideBarView.swift */,
+				8092449E2A6922A4004AEEE5 /* TrainDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		809244A32A6923AA004AEEE5 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				832905372A5FF0B300D3413C /* Dashboard_People_CounterApp.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		809244A42A6923C4004AEEE5 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				809244A62A692465004AEEE5 /* Utilities */,
+				809244A52A6923EF004AEEE5 /* Resources */,
+				809244932A69228B004AEEE5 /* Themes */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		809244A52A6923EF004AEEE5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8329053B2A5FF0B500D3413C /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		809244A62A692465004AEEE5 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				809244A72A692487004AEEE5 /* Firebase */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		809244A72A692487004AEEE5 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				8329054D2A5FF1B900D3413C /* FirebaseConnection.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		809244A82A6924AA004AEEE5 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				809244A92A6924C1004AEEE5 /* Dashboard */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		809244A92A6924C1004AEEE5 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				8092449A2A6922A4004AEEE5 /* Model */,
+				809244982A6922A4004AEEE5 /* ViewModel */,
+				8092449C2A6922A4004AEEE5 /* View */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
 		8329052B2A5FF0B300D3413C = {
 			isa = PBXGroup;
 			children = (
@@ -62,14 +169,13 @@
 		832905362A5FF0B300D3413C /* Dashboard People Counter */ = {
 			isa = PBXGroup;
 			children = (
-				832905372A5FF0B300D3413C /* Dashboard_People_CounterApp.swift */,
-				832905392A5FF0B300D3413C /* ContentView.swift */,
-				8329053B2A5FF0B500D3413C /* Assets.xcassets */,
 				832905402A5FF0B500D3413C /* Dashboard_People_Counter.entitlements */,
+				809244A32A6923AA004AEEE5 /* Application */,
+				809244A42A6923C4004AEEE5 /* Core */,
+				809244A82A6924AA004AEEE5 /* Features */,
+				832905392A5FF0B300D3413C /* ContentView.swift */,
 				832905462A5FF14000D3413C /* GoogleService-Info.plist */,
 				8329053D2A5FF0B500D3413C /* Preview Content */,
-				8329054D2A5FF1B900D3413C /* FirebaseConnection.swift */,
-				832905502A60005B00D3413C /* CountDataModel.swift */,
 			);
 			path = "Dashboard People Counter";
 			sourceTree = "<group>";
@@ -160,7 +266,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				809244A22A6922A4004AEEE5 /* TrainDetailView.swift in Sources */,
+				809244A02A6922A4004AEEE5 /* MockTrainModel.swift in Sources */,
 				8329054E2A5FF1B900D3413C /* FirebaseConnection.swift in Sources */,
+				809244972A69228B004AEEE5 /* Colors.swift in Sources */,
+				809244A12A6922A4004AEEE5 /* SideBarView.swift in Sources */,
+				8092449F2A6922A4004AEEE5 /* HomeViewModel.swift in Sources */,
+				809244962A69228B004AEEE5 /* Fonts.swift in Sources */,
 				8329053A2A5FF0B300D3413C /* ContentView.swift in Sources */,
 				832905382A5FF0B300D3413C /* Dashboard_People_CounterApp.swift in Sources */,
 				832905512A60005B00D3413C /* CountDataModel.swift in Sources */,
