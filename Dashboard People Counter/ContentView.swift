@@ -28,7 +28,7 @@ struct ContentView: View {
         NavigationView {
             SideBarView()
             
-            TrainDetailView()
+            DashboardView()
         }
         .navigationTitle("Dashboard")
         .toolbar {
