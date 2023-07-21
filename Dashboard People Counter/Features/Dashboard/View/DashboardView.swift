@@ -64,7 +64,7 @@ struct DashboardView: View {
                                                 .foregroundColor(.green)
                                                 .font(.SFProDisplay(.custom75))
                                             HStack(alignment: .bottom, spacing: 0) {
-                                                Text("\((homeVM.carsData["camera_1"]?.data.last?.calculateOptimalTemperature() ?? 23).toFormattedString())˚C")
+                                                Text("\((homeVM.carsData["camera_1"]?.data.last?.calculateOptimalTemperature() ?? 23).toFormattedString())")
                                                     .font(.SFProDisplay(.custom96))
                                                 Text("˚C")
                                                     .font(.SFProDisplay(.custom64))
