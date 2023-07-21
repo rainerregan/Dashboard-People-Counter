@@ -11,211 +11,216 @@ struct DashboardView: View {
     @EnvironmentObject var homeVM: HomeViewModel
     
     var body: some View {
-        VStack {
-            //MARK: Banner
-            VStack(alignment: .leading) {
-                Image("MRT-Banner")
-                    .resizable()
-                    .scaledToFit()
-            }
-            .frame(maxWidth: .infinity)
-            
-            //MARK: Carriage Information
-            VStack(alignment: .leading) {
-                Text("Bound for Lebak Bulus")
-                    .font(.SFProDisplay(.custom24))
-                Text("MRT - 1 0 7 9")
-                    .font(.SFProDisplay(.custom42))
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.horizontal, 137)
-            
-            
-            //MARK: Carriage Image
-            HStack {
-                ForEach(homeVM.dummyData, id: \.id) { train in
-                    VStack {
-                        Image("Car\(train.carId)")
-                            .resizable()
-                            .frame(width: 166, height: 80)
-                    }
-                    .onTapGesture {
-                        homeVM.trainDetail = train
-                    }
-                }
-            }
-            
-            
-            //MARK: Train Detail View
-            VStack(alignment: .leading) {
-                Text("For the best thermal comfort")
-                    .font(.SFProDisplay(.custom32))
-                    .bold()
-                HStack {
-                    //MARK: Left Detail Side
-                    HStack {
-                        VStack(alignment: .leading, spacing: 0) {
-                            //MARK: Temprature & Fan Speed (TOP SIDE)
-                            HStack {
-                                //MARK: Temprature
-                                VStack(alignment: .leading) {
-                                    Text("Temperature")
-                                        .font(.SFProDisplay(.custom32))
-                                        .fontWeight(.semibold)
-                                    
-                                    HStack {
-                                        Image(systemName: "thermometer.medium")
-                                            .foregroundColor(.green)
-                                            .font(.SFProDisplay(.custom75))
-                                        HStack(alignment: .bottom, spacing: 0) {
-                                            Text("\(homeVM.trainDetail.currTemp)")
-                                                .font(.SFProDisplay(.custom96))
-                                            Text("˚C")
-                                                .font(.SFProDisplay(.custom64))
-                                        }
-                                        .fontWeight(.heavy)
-                                        
-                                    }
+        ScrollView{
+            VStack {
+                VStack(alignment: .leading) {
+                    //MARK: Banner
+                    Image("MRT-Banner")
+                        .resizable()
+                        .frame(maxWidth: .infinity)
+                        .scaledToFit()
+                    
+                    // MARK: VStack Dalam
+                    VStack(alignment: .leading) {
+                        //MARK: -Carriage Information
+                        VStack(alignment: .leading) {
+                            Text("Bound for Lebak Bulus")
+                                .font(.SFProDisplay(.custom24))
+                            Text("MRT - 1079")
+                                .font(.SFProDisplay(.custom42))
+                                .bold()
+                        }
+                
+                        
+                        //MARK: -Carriage Image
+                        HStack {
+                            ForEach(homeVM.dummyData, id: \.id) { train in
+                                VStack {
+                                    Image("Car\(train.carId)")
+                                        .resizable()
+                                        .frame(width: 166, height: 80)
                                 }
-                                .padding(.trailing, 150)
-                                .padding(.leading, 30)
-                                
-                                //MARK: Fan Speed
-                                VStack(alignment: .leading) {
-                                    Text("Fan Speed")
-                                        .font(.SFProDisplay(.custom32))
-                                        .fontWeight(.semibold)
-                                    
-                                    HStack {
-                                        Image(systemName: "wind")
-                                            .foregroundColor(.green)
-                                            .font(.SFProDisplay(.custom75))
-                                        Text("\(homeVM.trainDetail.fanSpeed)%")
-                                            .font(.SFProDisplay(.custom96))
-                                    }
-                                    .fontWeight(.heavy)
+                                .onTapGesture {
+                                    homeVM.trainDetail = train
                                 }
                             }
-                            .frame(width: 940, alignment: .leading)
-                            .background(.gray.opacity(0.4))
-                            .clipShape(RoundedRectangle(cornerRadius: 20))
-                            .padding(.bottom, 30)
-                            
-                            //MARK: Current Car Condition & Weather (BOTTOM SIDE)
-                            HStack {
-                                VStack(alignment: .leading) {
-                                    Text("Current Car Condition")
-                                        .font(.SFProDisplay(.custom24))
-                                        .fontWeight(.semibold)
-                                        .padding(.bottom, 30)
-                                    
-                                    //MARK: Mass Crowd & Outside Temperature
-                                    HStack(alignment: .top) {
-                                        //MARK: Mass Crowd
-                                        VStack(alignment: .leading) {
-                                            Text("Mass Crowd")
-                                                .fontWeight(.semibold)
-                                                .font(.SFProDisplay(.custom24))
-                                            
-                                            HStack {
-                                                Image(systemName: "person.2.fill")
-                                                    .foregroundColor(.green)
-                                                    .font(.SFProDisplay(.custom32))
-                                                
-                                                Text("\(homeVM.trainDetail.currPassenger)")
-                                                    .font(.SFProDisplay(.custom24))
-                                                    .fontWeight(.bold)
-                                            }
-                                            Text("of 189")
-                                                .font(.SFProDisplay(.custom24))
-                                            
-                                        }
-                                        .padding(.trailing, 40)
-                                        
-                                        //MARK: Outside Temperature
-                                        VStack(alignment: .leading) {
-                                            Text("Outside Temperature")
-                                                .font(.SFProDisplay(.custom24))
-                                                .fontWeight(.semibold)
-                                            
-                                            HStack {
-                                                Image(systemName: "thermometer.medium")
-                                                    .foregroundColor(.green)
-                                                    .font(.SFProDisplay(.custom24))
-                                                
-                                                Text("\(homeVM.trainDetail.currTemp) ˚C")
-                                                    .font(.SFProDisplay(.custom24))
-                                                    .fontWeight(.bold)
-                                            }
-                                        }
-                                    }
-                                    .frame(width: 470, alignment: .leading)
-                                    .background(.red)
-                                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                                }
-                            
-                                //MARK: Weather
-                                VStack(alignment: .leading) {
-                                    Text("Weather")
-                                        .font(.SFProDisplay(.custom24))
-                                        .fontWeight(.semibold)
-                                        .padding(.bottom, 30)
-                                    
-                                    //MARK: Weather
+                        }
+                        
+                        // MARK: - Train Detail
+                        HStack(alignment: .top) {
+                            VStack(alignment: .leading) {
+                                Text("For the Best Thermal Comfort")
+                                    .font(.SFProDisplay(.custom24))
+                                    .bold()
+                                
+                                HStack{
                                     VStack(alignment: .leading) {
-                                        Text("Weather")
-                                            .fontWeight(.semibold)
+                                        Text("Temperature")
                                             .font(.SFProDisplay(.custom24))
+                                            .fontWeight(.semibold)
                                         
                                         HStack {
-                                            Image(systemName: "sun.min")
-                                                .foregroundColor(.orange)
-                                                .font(.SFProDisplay(.custom32))
+                                            Image(systemName: "thermometer.medium")
+                                                .foregroundColor(.green)
+                                                .font(.SFProDisplay(.custom75))
+                                            HStack(alignment: .bottom, spacing: 0) {
+                                                Text("\(homeVM.trainDetail.currTemp)")
+                                                    .font(.SFProDisplay(.custom96))
+                                                Text("˚C")
+                                                    .font(.SFProDisplay(.custom64))
+                                            }
+                                            .fontWeight(.heavy)
                                             
-                                            Text(homeVM.trainDetail.weatherStatus)
-                                                .font(.SFProDisplay(.custom24))
-                                                .fontWeight(.bold)
                                         }
-                                        Text(homeVM.trainDetail.chanceOfRain)
+                                    }
+                                    Spacer()
+                                    //MARK: Fan Speed
+                                    VStack(alignment: .leading) {
+                                        Text("Fan Speed")
                                             .font(.SFProDisplay(.custom24))
+                                            .fontWeight(.semibold)
+                                        
+                                        HStack {
+                                            Image(systemName: "wind")
+                                                .foregroundColor(.green)
+                                                .font(.SFProDisplay(.custom75))
+                                            Text("\(homeVM.trainDetail.fanSpeed)%")
+                                                .font(.SFProDisplay(.custom96))
+                                        }
+                                        .fontWeight(.heavy)
+                                    }
+                                }
+                                .padding(32)
+                                .background(.white)
+                                .cornerRadius(20)
+                                
+                                Spacer()
+                                    .frame(height: 16)
+                                
+                                HStack(alignment: .top) {
+                                    VStack(alignment:.leading) {
+                                        Text("Current Car Condition")
+                                            .font(.SFProDisplay(.custom24))
+                                            .fontWeight(.bold)
+                                        
+                                        HStack {
+                                            VStack(alignment: .leading) {
+                                                Text("Mass Crowd")
+                                                    .fontWeight(.semibold)
+                                                    .font(.SFProDisplay(.custom12))
+                                                
+                                                HStack(spacing: 0) {
+                                                    Image(systemName: "person.2.fill")
+                                                        .foregroundColor(.blue)
+                                                        .font(.SFProDisplay(.custom24))
+                                                    
+                                                    Text("\(homeVM.trainDetail.currPassenger)")
+                                                        .font(.SFProDisplay(.custom32))
+                                                        .fontWeight(.bold)
+                                                }
+                                                Text("of 189")
+                                                    .font(.SFProDisplay(.custom12))
+                                                
+                                            }
+                                            
+                                        }
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        .padding(.horizontal, 32)
+                                        .padding(.vertical, 16)
+                                        .background(.white)
+                                        .cornerRadius(20)
+                                    }
+                                    
+                                    Spacer()
+                                        .frame(width: 16)
+                                    
+                                    VStack(alignment: .leading) {
+                                        Text("Weather")
+                                            .font(.SFProDisplay(.custom24))
+                                            .fontWeight(.bold)
+                                        HStack(alignment: .top) {
+                                            VStack(alignment: .leading) {
+                                                Text("Weather")
+                                                    .fontWeight(.semibold)
+                                                    .font(.SFProDisplay(.custom12))
+                                                
+                                                HStack {
+                                                    Image(systemName: "sun.min")
+                                                        .foregroundColor(.orange)
+                                                        .font(.SFProDisplay(.custom24))
+                                                    
+                                                    Text(homeVM.trainDetail.weatherStatus)
+                                                        .font(.SFProDisplay(.custom32))
+                                                        .fontWeight(.bold)
+                                                }
+                                                Text(homeVM.trainDetail.chanceOfRain)
+                                                    .font(.SFProDisplay(.custom12))
+                                                
+                                            }
+                                            Spacer()
+                                            VStack(alignment: .leading) {
+                                                Text("Environment Temperature")
+                                                    .fontWeight(.semibold)
+                                                    .font(.SFProDisplay(.custom12))
+                                                
+                                                HStack (spacing: 0) {
+                                                    Image(systemName: "thermometer.medium")
+                                                        .foregroundColor(.orange)
+                                                        .font(.SFProDisplay(.custom24))
+                                                    
+                                                    Text(("\(homeVM.trainDetail.currTemp)˚C"))
+                                                        .font(.SFProDisplay(.custom32))
+                                                        .fontWeight(.bold)
+                                                }
+                                                
+                                            }
+                                        }
+                                        .padding(.horizontal, 32)
+                                        .padding(.vertical, 16)
+                                            .background(.white)
+                                            .cornerRadius(20)
+                                    }
+                                }
+                                
+                            }
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            
+                            Spacer(minLength: 20)
+                            
+                            // MARK: - Live View
+                            VStack(alignment: .leading){
+                                Text("Live View")
+                                    .font(.SFProDisplay(.custom24))
+                                    .bold()
+                                VStack {
+                                    VStack() {
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .fill(.gray)
+                                            .frame(height: 150)
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .fill(.gray)
+                                            .frame(height: 150)
                                         
                                     }
-                                    .frame(width: 470, alignment: .leading)
-                                    .background(.red)
-                                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                                
+                                    .frame(maxHeight: .infinity, alignment: .top)
                                 }
+                                .padding(16)
+                                .background(.white)
+                                .cornerRadius(20)
                             }
-                            
+                            .frame(width: 240, alignment: .leading)
                         }
+                        .padding(.vertical, 16)
+                        
                     }
-                    .frame(width: 980, alignment: .leading)
-                    .background(.blue)
-                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                    
-                    
-                    //MARK: Right Detail Side
-                    VStack {
-                        Text("Live View")
-                        VStack {
-                            VStack {
-                                RoundedRectangle(cornerRadius: 10)
-                                    .fill(.gray)
-                                
-                                RoundedRectangle(cornerRadius: 10)
-                                    .fill(.gray)
-                            }
-                            .frame(width: 200, height: 400)
-                        }
-                        .frame(width: 250, height: 430)
-                        .background(.white)
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                    }
+                    .padding(.horizontal, 100)
+                    .padding(.vertical, 16)
                 }
+        
             }
-            
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        
     }
 }
 
@@ -224,36 +229,3 @@ struct DashboardView_Previews: PreviewProvider {
         DashboardView()
     }
 }
-
-
-/*
- AngularGradient(gradient: Gradient(colors: [Color("Angular-Tosca"),
- Color("Angular-Green"),
- Color("Angular-Orange"),
- Color("Angular-Orange")]), center: .zero, angle: .degrees(270+45))
- 
- 
- 
- 
- ZStack {
- Image("ColorfullBG")
- .resizable()
- .scaledToFill()
- .frame(maxWidth: screen.width, maxHeight: 700, alignment: .top)
- .padding(.bottom, 90)
- 
- //MARK: Train Name
- VStack(alignment: .leading) {
- Text("Going to Lebak Bulus")
- .font(.SFProDisplay(.custom24))
- 
- Text("Train Number 9")
- .font(.SFProDisplay(.custom42))
- }
- //            .foregroundColor(.App.mainBlue)
- .frame(maxWidth: .infinity, alignment: .leading)
- .padding(.leading, 150)
- }
- 
- 
- */

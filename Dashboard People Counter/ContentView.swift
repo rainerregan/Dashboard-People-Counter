@@ -38,7 +38,6 @@ struct ContentView: View {
                 }
             }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .onAppear{
             delegate.getCounterData(completion: updateData)
         }

@@ -9,6 +9,8 @@ import Foundation
 
 class HomeViewModel: ObservableObject {
     
+//    var screen = NSScreen.main?.frame.size
+    
     @Published var dummyData = [
         MockTrainModel(carID: 1, trainID: 1, currTemp: 28, fanSpeed: 60, currPassenger: 68, optTemp: 22, weatherStatus: "Sunny", chanceOfRain: "20% chance of rain"),
         MockTrainModel(carID: 2, trainID: 1, currTemp: 29, fanSpeed: 40, currPassenger: 38, optTemp: 23, weatherStatus: "Cloudy", chanceOfRain: "30% chance of rain"),

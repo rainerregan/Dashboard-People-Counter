@@ -17,6 +17,8 @@ extension Font {
         case custom42 = 42
         case custom32 = 32
         case custom24 = 24
+        case custom12 = 12
+        case custom8 = 8
     }
 
     static func SFProDisplay(_ size: sizeFont) -> Font {
