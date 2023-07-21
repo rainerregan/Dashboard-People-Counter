@@ -13,6 +13,17 @@ struct DashboardView: View {
     var body: some View {
         ScrollView{
             VStack {
+//                Button("Speech") {
+//
+//
+//                        // TTS
+//                        let utterance = AVSpeechUtterance(string: "Hello")
+//                        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+//                    utterance.rate = 0.5
+//
+//                    synthesizer = AVSpeechSynthesizer()
+//                        synthesizer.speak(utterance)
+//                }
                 VStack(alignment: .leading) {
                     //MARK: Banner
                     Image("MRT-Banner")
