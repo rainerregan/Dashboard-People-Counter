@@ -14,6 +14,8 @@
 		809244A12A6922A4004AEEE5 /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8092449D2A6922A4004AEEE5 /* SideBarView.swift */; };
 		809244A22A6922A4004AEEE5 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8092449E2A6922A4004AEEE5 /* DashboardView.swift */; };
 		809244AC2A6929C0004AEEE5 /* HelperFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809244AB2A6929C0004AEEE5 /* HelperFunction.swift */; };
+		831E27B02A6A6DCD00CCDE50 /* CarDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831E27AF2A6A6DCD00CCDE50 /* CarDataModel.swift */; };
+		831E27B22A6A79CD00CCDE50 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831E27B12A6A79CD00CCDE50 /* Double+Extension.swift */; };
 		832905382A5FF0B300D3413C /* Dashboard_People_CounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832905372A5FF0B300D3413C /* Dashboard_People_CounterApp.swift */; };
 		8329053A2A5FF0B300D3413C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832905392A5FF0B300D3413C /* ContentView.swift */; };
 		8329053C2A5FF0B500D3413C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8329053B2A5FF0B500D3413C /* Assets.xcassets */; };
@@ -33,6 +35,8 @@
 		8092449D2A6922A4004AEEE5 /* SideBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
 		8092449E2A6922A4004AEEE5 /* DashboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		809244AB2A6929C0004AEEE5 /* HelperFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunction.swift; sourceTree = "<group>"; };
+		831E27AF2A6A6DCD00CCDE50 /* CarDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDataModel.swift; sourceTree = "<group>"; };
+		831E27B12A6A79CD00CCDE50 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		832905342A5FF0B300D3413C /* Dashboard People Counter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dashboard People Counter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		832905372A5FF0B300D3413C /* Dashboard_People_CounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard_People_CounterApp.swift; sourceTree = "<group>"; };
 		832905392A5FF0B300D3413C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 			children = (
 				832905502A60005B00D3413C /* CountDataModel.swift */,
 				8092449B2A6922A4004AEEE5 /* MockTrainModel.swift */,
+				831E27AF2A6A6DCD00CCDE50 /* CarDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				809244A72A692487004AEEE5 /* Firebase */,
+				831E27B12A6A79CD00CCDE50 /* Double+Extension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -279,7 +285,9 @@
 			files = (
 				809244AC2A6929C0004AEEE5 /* HelperFunction.swift in Sources */,
 				809244A22A6922A4004AEEE5 /* DashboardView.swift in Sources */,
+				831E27B02A6A6DCD00CCDE50 /* CarDataModel.swift in Sources */,
 				809244A02A6922A4004AEEE5 /* MockTrainModel.swift in Sources */,
+				831E27B22A6A79CD00CCDE50 /* Double+Extension.swift in Sources */,
 				8329054E2A5FF1B900D3413C /* FirebaseConnection.swift in Sources */,
 				809244972A69228B004AEEE5 /* Colors.swift in Sources */,
 				809244A12A6922A4004AEEE5 /* SideBarView.swift in Sources */,

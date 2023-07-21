@@ -20,11 +20,10 @@ class FirebaseConnection: NSObject, ObservableObject {
         print("Firebase connected")
     }
     
-    func getCounterData(completion: @escaping (DataSnapshot?) -> Void){
+    func getCounterData(car_id: String, completion: @escaping (DataSnapshot?) -> Void){
         var ref: DatabaseReference!
         ref = Database.database().reference()
         
-//        ref.child("camera_1").getData(completion: completion)
-        ref.child("camera_1").observe(DataEventType.value, with: completion)
+        ref.child(car_id).observe(DataEventType.value, with: completion)
     }
 }

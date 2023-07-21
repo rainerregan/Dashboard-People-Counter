@@ -64,7 +64,7 @@ struct DashboardView: View {
                                                 .foregroundColor(.green)
                                                 .font(.SFProDisplay(.custom75))
                                             HStack(alignment: .bottom, spacing: 0) {
-                                                Text("\(homeVM.trainDetail.currTemp)")
+                                                Text("\((homeVM.carsData["camera_1"]?.data.last?.calculateOptimalTemperature() ?? 23).toFormattedString())˚C")
                                                     .font(.SFProDisplay(.custom96))
                                                 Text("˚C")
                                                     .font(.SFProDisplay(.custom64))
@@ -84,7 +84,7 @@ struct DashboardView: View {
                                             Image(systemName: "wind")
                                                 .foregroundColor(.green)
                                                 .font(.SFProDisplay(.custom75))
-                                            Text("\(homeVM.trainDetail.fanSpeed)%")
+                                            Text("\((homeVM.carsData["camera_1"]?.data.last?.calculateOptimalFanSpeed() ?? 0).toFormattedString())%")
                                                 .font(.SFProDisplay(.custom96))
                                         }
                                         .fontWeight(.heavy)
@@ -114,7 +114,7 @@ struct DashboardView: View {
                                                         .foregroundColor(.blue)
                                                         .font(.SFProDisplay(.custom24))
                                                     
-                                                    Text("\(homeVM.trainDetail.currPassenger)")
+                                                    Text("\(homeVM.carsData["camera_1"]?.data.last?.count ?? -1)")
                                                         .font(.SFProDisplay(.custom32))
                                                         .fontWeight(.bold)
                                                 }
@@ -168,7 +168,7 @@ struct DashboardView: View {
                                                         .foregroundColor(.orange)
                                                         .font(.SFProDisplay(.custom24))
                                                     
-                                                    Text(("\(homeVM.trainDetail.currTemp)˚C"))
+                                                    Text(("\((homeVM.carsData["camera_1"]?.data.last?.outsideTemperature ?? 35).toFormattedString())˚C"))
                                                         .font(.SFProDisplay(.custom32))
                                                         .fontWeight(.bold)
                                                 }

@@ -11,7 +11,7 @@ import FirebaseDatabase
 import Charts
 
 struct ContentView: View {
-    @State var countData : [CountDataModel] = []
+    @EnvironmentObject var homeVm: HomeViewModel
     @EnvironmentObject var delegate: FirebaseConnection
     
     func updateData(snapshot: DataSnapshot?) {
@@ -20,14 +20,20 @@ struct ContentView: View {
         let count = value["person_count"] as! Int
         let lastUpdated = value["last_updated"] as! Double
         
-        let data = CountDataModel(count: count, lastUpdated: Date(timeIntervalSince1970: lastUpdated))
-        countData.append(data)
+        let countData = CountDataModel(count: count, lastUpdated: Date(timeIntervalSince1970: lastUpdated))
+        
+        var carData = CarDataModel()
+        carData.data.append(countData)
+        
+//        homeVm.countData.append(data)
+        
+        // Masukkan Car data ke dalam dictionary
+        homeVm.carsData["camera_1"] = carData;
     }
     
     var body: some View {
         NavigationView {
             SideBarView()
-            
             DashboardView()
         }
         .navigationTitle("Dashboard")
@@ -39,7 +45,7 @@ struct ContentView: View {
             }
         }
         .onAppear{
-            delegate.getCounterData(completion: updateData)
+            delegate.getCounterData(car_id: "camera_1", completion: updateData)
         }
     }
 }
