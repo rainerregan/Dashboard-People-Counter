@@ -17,4 +17,6 @@ class HomeViewModel: ObservableObject {
         MockTrainModel(carID: 5, trainID: 1, currTemp: 30, fanSpeed: 20, currPassenger: 19, optTemp: 22, weatherStatus: "Rain", chanceOfRain: "90% chance of rain"),
         MockTrainModel(carID: 6, trainID: 1, currTemp: 30, fanSpeed: 40, currPassenger: 91, optTemp: 21, weatherStatus: "Rain", chanceOfRain: "100% chance of rain")
     ]
+    
+    @Published var trainDetail = MockTrainModel(carID: 1, trainID: 1, currTemp: 28, fanSpeed: 60, currPassenger: 68, optTemp: 22, weatherStatus: "Sunny", chanceOfRain: "20% chance of rain")
 }

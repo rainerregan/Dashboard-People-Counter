@@ -11,8 +11,11 @@ import SwiftUI
 extension Font {
     enum sizeFont: Int {
         case custom112 = 112
+        case custom96 = 96
+        case custom75 = 75
         case custom64 = 64
         case custom42 = 42
+        case custom32 = 32
         case custom24 = 24
     }
 
